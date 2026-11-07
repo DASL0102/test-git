@@ -1,3 +1,4 @@
+import json
 def crear_perfil(nombre: str, edad: int, correo: str) -> dict:
     perfil = {
         "nombre": nombre,
@@ -7,7 +8,7 @@ def crear_perfil(nombre: str, edad: int, correo: str) -> dict:
     return perfil
 
 def formatear_perfil(perfil: dict) -> str:
-    return f"{perfil['nombre']} tiene {perfil['edad']} años y su correo es {perfil['correo']}"
+    return json.dumps(perfil, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":
